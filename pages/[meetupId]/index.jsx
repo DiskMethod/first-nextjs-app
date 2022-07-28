@@ -38,8 +38,6 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const meetupId = context.params.meetupId;
-  console.log("HERE", meetupId);
-
   const client = await MongoClient.connect(process.env.MONGO_URI);
   const db = client.db();
   const meetupsCollection = db.collection("meetups");
